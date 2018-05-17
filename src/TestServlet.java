@@ -29,12 +29,13 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//为了体现程序的异步性，先让它睡3s
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
 		response.setCharacterEncoding("utf-8");  
+		response.getWriter().write("Hello World!");
 		System.out.println("异步程序运行时间："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS") .format(new Date()));
 	}
 
